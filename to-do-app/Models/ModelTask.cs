@@ -1,0 +1,19 @@
+namespace Models;
+
+public class TodoTask
+{
+	private int TaskId { get; set; }
+	public string? TaskName { get; set; }
+	public string? TaskDescription { get; set; }
+	public bool TaskIsDone { get; set; }
+	public DateTime TaskCreationDate { get; set; }
+
+	public TodoTask(string name, string description, int id)
+	{
+		this.TaskId = id;
+		this.TaskName = name;
+		this.TaskDescription = description;
+		this.TaskIsDone = false;
+		this.TaskCreationDate = DateTime.UtcNow;
+	}
+}
