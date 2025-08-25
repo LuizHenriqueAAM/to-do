@@ -1,9 +1,13 @@
 ﻿namespace to_do_app;
+
 using Models;
+using Services;
 class Program
 {
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
+        ServiceTask.CreateTask("Teste", "Teste");
 
+        ServiceTask.ListAllTasks();
     }
 }

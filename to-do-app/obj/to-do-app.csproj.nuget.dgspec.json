@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/luiz/projetos/to-do/to-do/to-do-app/to-do-app.csproj": {}
+    "/home/luiz/projetos/to-do/to-do-app/to-do-app.csproj": {}
   },
   "projects": {
-    "/home/luiz/projetos/to-do/to-do/to-do-app/to-do-app.csproj": {
+    "/home/luiz/projetos/to-do/to-do-app/to-do-app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/luiz/projetos/to-do/to-do/to-do-app/to-do-app.csproj",
+        "projectUniqueName": "/home/luiz/projetos/to-do/to-do-app/to-do-app.csproj",
         "projectName": "to-do-app",
-        "projectPath": "/home/luiz/projetos/to-do/to-do/to-do-app/to-do-app.csproj",
+        "projectPath": "/home/luiz/projetos/to-do/to-do-app/to-do-app.csproj",
         "packagesPath": "/home/luiz/.nuget/packages/",
-        "outputPath": "/home/luiz/projetos/to-do/to-do/to-do-app/obj/",
+        "outputPath": "/home/luiz/projetos/to-do/to-do-app/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/luiz/.nuget/NuGet/NuGet.Config"
@@ -20,7 +20,6 @@
           "net9.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -66,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.109/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -16,4 +16,8 @@ public class TodoTask
 		this.TaskIsDone = false;
 		this.TaskCreationDate = DateTime.UtcNow;
 	}
+	public override string ToString()
+	{
+		return $"[ID: {TaskId}] {TaskName} - {TaskDescription} | Created at: {TaskCreationDate:dd/MM/yyyy HH:mm} | Finished: {TaskIsDone}";
+	}
 }
