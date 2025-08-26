@@ -4,7 +4,6 @@ public class ServiceTask
 {
 	public static List<TodoTask> TaskList = new List<TodoTask>();
 
-	// This method aims to create a Task object and stores it on the TaskList
 	public static void CreateTask(string TaskName, string TaskDescription)
 	{
 		int TasksInList = TaskList.Count() + 1;
@@ -14,10 +13,32 @@ public class ServiceTask
 
 	public static void ListAllTasks()
 	{
-		TaskList.ForEach(task => Console.WriteLine(task));
+		if (TaskList.Count == 0)
+		{
+			Console.WriteLine("No tasks registered");
+		}
+		foreach (var task in TaskList)
+		{
+			Console.WriteLine(task);
+		}
+
 	}
-	public static void RemoveTask(TodoTask Task)
+
+	public static TodoTask? GetTaskById(int TargetTaskId)
 	{
-		ListAllTasks.RemoveTask(Task);
+		foreach (var task in TaskList)
+		{
+			if (task.TaskId == TargetTaskId)
+			{
+				return task;
+			}
+		}
+		return null;
+	}
+
+	public static void RemoveTargetTask(int TargetTaskId)
+	{
+		TodoTask? TaskToRemove = GetTaskById(TargetTaskId);
+		TaskList.Remove(TaskToRemove!);
 	}
 }
