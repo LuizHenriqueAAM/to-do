@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dfQ+cddOyOY=",
+  "dgSpecHash": "lc2CptGuWIY=",
   "success": true,
-  "projectFilePath": "/home/luiz/projetos/to-do/to-do-app/to-do-app.csproj",
+  "projectFilePath": "/home/luiz/projetos/to-do/to-do/to-do-app/to-do-app.csproj",
   "expectedPackageFiles": [
     "/home/luiz/.nuget/packages/spectre.console/0.50.0/spectre.console.0.50.0.nupkg.sha512",
     "/home/luiz/.nuget/packages/spectre.console.cli/0.50.0/spectre.console.cli.0.50.0.nupkg.sha512",

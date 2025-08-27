@@ -1,5 +1,7 @@
 namespace Services;
 using Models;
+using Spectre.Console;
+
 public class ServiceTask
 {
 
@@ -12,7 +14,9 @@ public class ServiceTask
 		int TasksInList = TaskList.Count() + 1;
 		TodoTask NewTask = new TodoTask(TaskName, TaskDescription, TasksInList);
 		TaskList.Add(NewTask);
-		Console.WriteLine("Task Created!");
+		AnsiConsole.MarkupLine("[green] Task Created![/]\n[red] Press 'enter' to close[/]");
+		Console.ReadLine();
+		Console.Clear();
 	}
 
 	// This method write on the console all tasks stored on the TaskList
@@ -61,8 +65,7 @@ public class ServiceTask
 			Console.WriteLine("Task not found!");
 			return;
 		}
-
-		
+		TaskToFinish.TaskIsDone = true;
+		Console.WriteLine("Task marked as complete!");
 	}
-
 }
