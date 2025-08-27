@@ -6,6 +6,8 @@ class Program
 {
     public static void Main(string[] args)
     {
-        
+        ServiceTask.CreateTask("Teste", "Teste");
+        ServiceTask.ListAllTasks();
+        ServiceTask.RemoveTargetTask(2);
     }
 }

@@ -14,7 +14,7 @@ public class TodoTask
 		this.TaskName = name;
 		this.TaskDescription = description;
 		this.TaskIsDone = false;
-		this.TaskCreationDate = DateTime.UtcNow;
+		this.TaskCreationDate = DateTime.Now;
 	}
 	public override string ToString()
 	{
