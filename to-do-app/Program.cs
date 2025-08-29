@@ -4,43 +4,59 @@ using Models;
 using Services;
 using Spectre.Console;
 using Spectre.Console.Cli;
+
 class Program
 {
     public static void Main(string[] args)
     {
-        Console.Clear();
-        var Option = "";
-        while (Option != "Quit Application")
+        AnsiConsole.Clear();
+        ServiceTask.CreateTask("Teste", "teste");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        ServiceTask.CreateTask("Teste2", "teste2");
+        // Create the layout
+        var layout = new Layout("Root")
+            .SplitColumns(
+                new Layout("Left"),
+                new Layout("Right")
+                    .SplitRows(
+                        new Layout("Top"),
+                        new Layout("Bottom")));
+        // Update the left column
+        layout["Left"].Update(
+            new Panel(
+                Align.Center(
+                    new Markup("Hello [blue]World![/]"),
+                    VerticalAlignment.Middle))
+                .Expand());
+
+        var table = new Table();
+        table = table.AddColumn("ID");
+        table = table.AddColumn("Tasks");
+
+        for (int i = 0; i < ServiceTask.TaskList.Count; i++)
         {
-            Option = AnsiConsole.Prompt(
-                new SelectionPrompt<string>()
-                    .Title("What do you want to do?")
-                    .PageSize(10)
-                    .AddChoices(new[] {
-                        "Create a Task", "List All Tasks", "Remove One Task", "Mark a Task as finished", "Quit Application"
-                    }
-                )
-            );
-
-            if (Option == "Create a Task")
-            {
-                AnsiConsole.MarkupLine("[underline green]Name your task:[/]");
-                string TaskName = Console.ReadLine()!;
-                AnsiConsole.MarkupLine("[underline green]Describe your task:[/]");
-                string TaskDescription = Console.ReadLine()!;
-                ServiceTask.CreateTask(TaskName, TaskDescription);
-            }
-            if (Option == "List All Tasks")
-            {
-                var panel = new Panel("List of Tasks");
-                panel.Header("Tasks");
-                panel.Border = BoxBorder.Square;
-                panel.Expand = true;
-            }
-
-
+            table = table.AddRow((i+1).ToString(), ServiceTask.TaskList[i].ToString());
         }
-        Console.Clear();
-        
+
+        layout["Top"].Update(
+            new Panel(table)
+                .Header("tasks")
+                .Expand()
+        );
+
+        // Render the layout
+        AnsiConsole.Write(layout);
     }
 }

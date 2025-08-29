@@ -18,6 +18,6 @@ public class TodoTask
 	}
 	public override string ToString()
 	{
-		return $"[ID: {TaskId}] {TaskName} - {TaskDescription} | Created at: {TaskCreationDate:dd/MM/yyyy HH:mm} | Finished: {TaskIsDone}";
+		return $"ID: {TaskId} {TaskName} - {TaskDescription} | Created at: {TaskCreationDate:dd/MM/yyyy HH:mm} | Finished: {TaskIsDone}";
 	}
 }

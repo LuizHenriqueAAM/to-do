@@ -14,9 +14,6 @@ public class ServiceTask
 		int TasksInList = TaskList.Count() + 1;
 		TodoTask NewTask = new TodoTask(TaskName, TaskDescription, TasksInList);
 		TaskList.Add(NewTask);
-		AnsiConsole.MarkupLine("[green] Task Created![/]\n[red] Press 'enter' to close[/]");
-		Console.ReadLine();
-		Console.Clear();
 	}
 
 	// This method write on the console all tasks stored on the TaskList
